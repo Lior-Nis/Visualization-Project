@@ -246,7 +246,7 @@ filtered_data = filtered_data.sort_values(by=['Log Valuation'], ascending=False)
 fig = px.violin(filtered_data, x='Industry', y='Log Valuation', 
                 hover_data=['Valuation'])
 
-agg_data = filtered_data.groupby(['Industry']).agg('mean')
+agg_data = filtered_data.groupby(['Industry']).mean(numeric_only=True)
 agg_data = agg_data.sort_values(by=['Valuation'], ascending=False)
 agg_data['Valuation'] = agg_data['Valuation'].apply(lambda x: round(x, 2))
 
