@@ -20,7 +20,7 @@ custom_theme = """
 st.markdown(custom_theme, unsafe_allow_html=True)
 
 # Data Loading
-data = pd.read_csv('P4/WWUS.csv')
+data = pd.read_csv('./WWUS.csv')
 
 # Parameters
 sectors = data['Industry'].unique().tolist()
